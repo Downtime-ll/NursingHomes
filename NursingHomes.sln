@@ -14,6 +14,10 @@ Project("{A07B5EB6-E848-4116-A8D0-A826331D98C6}") = "NursingHomes.App", "src\Nur
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NursingHomes.Geteway", "src\NursingHomes.Geteway\NursingHomes.Geteway.csproj", "{50EF3EAD-A3BD-434C-94BF-D363A27061EA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "microservices", "microservices", "{42AAD428-CBB6-40DE-B088-1192084B0EE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityHost.Service", "microservices\IdentityHost.Service\src\IdentityHost.Service\IdentityHost.Service.csproj", "{D788BE32-4B6B-41E6-8E65-9F1531819236}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,13 @@ Global
 		{50EF3EAD-A3BD-434C-94BF-D363A27061EA}.Release|Any CPU.ActiveCfg = Release|x64
 		{50EF3EAD-A3BD-434C-94BF-D363A27061EA}.Release|x64.ActiveCfg = Release|x64
 		{50EF3EAD-A3BD-434C-94BF-D363A27061EA}.Release|x64.Build.0 = Release|x64
+		{D788BE32-4B6B-41E6-8E65-9F1531819236}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{D788BE32-4B6B-41E6-8E65-9F1531819236}.Debug|Any CPU.Build.0 = Debug|x64
+		{D788BE32-4B6B-41E6-8E65-9F1531819236}.Debug|x64.ActiveCfg = Debug|x64
+		{D788BE32-4B6B-41E6-8E65-9F1531819236}.Debug|x64.Build.0 = Debug|x64
+		{D788BE32-4B6B-41E6-8E65-9F1531819236}.Release|Any CPU.ActiveCfg = Release|x64
+		{D788BE32-4B6B-41E6-8E65-9F1531819236}.Release|x64.ActiveCfg = Release|x64
+		{D788BE32-4B6B-41E6-8E65-9F1531819236}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,5 +57,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{3CF3A684-E25B-4FD5-89BC-EDE859FBB4B8} = {01826E46-DA98-4CF4-9209-3CAA740E15AB}
 		{50EF3EAD-A3BD-434C-94BF-D363A27061EA} = {01826E46-DA98-4CF4-9209-3CAA740E15AB}
+		{D788BE32-4B6B-41E6-8E65-9F1531819236} = {42AAD428-CBB6-40DE-B088-1192084B0EE7}
 	EndGlobalSection
 EndGlobal
