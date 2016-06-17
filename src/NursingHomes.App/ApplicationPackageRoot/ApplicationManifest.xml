@@ -1,27 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ApplicationManifest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ApplicationTypeName="NursingHomes.AppType" ApplicationTypeVersion="1.0.0" xmlns="http://schemas.microsoft.com/2011/01/fabric">
-   <Parameters>
-      <Parameter Name="IdentityHost_InstanceCount" DefaultValue="1" />
-      <Parameter Name="Geteway_InstanceCount" DefaultValue="1" />
-   </Parameters>
-   <ServiceManifestImport>
-      <ServiceManifestRef ServiceManifestName="IdentityHost.ServicePkg" ServiceManifestVersion="1.0.0" />
-      <ConfigOverrides />
-   </ServiceManifestImport>
-   <ServiceManifestImport>
-      <ServiceManifestRef ServiceManifestName="NursingHomes.GetewayPkg" ServiceManifestVersion="1.0.0" />
-      <ConfigOverrides />
-   </ServiceManifestImport>
-   <DefaultServices>
-      <Service Name="IdentityHost">
-         <StatelessService ServiceTypeName="ServiceType" InstanceCount="[IdentityHost_InstanceCount]">
-            <SingletonPartition />
-         </StatelessService>
-      </Service>
-      <Service Name="Geteway">
-         <StatelessService ServiceTypeName="GetewayType" InstanceCount="[Geteway_InstanceCount]">
-            <SingletonPartition />
-         </StatelessService>
-      </Service>
-   </DefaultServices>
+  <Parameters>
+    <Parameter Name="Base_InstanceCount" DefaultValue="-1" />
+    <Parameter Name="Geteway_InstanceCount" DefaultValue="1" />
+  </Parameters>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="NursingHomes.BasePkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides />
+  </ServiceManifestImport>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="NursingHomes.GetewayPkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides />
+  </ServiceManifestImport>
+  <DefaultServices>
+    <Service Name="Base">
+      <StatelessService ServiceTypeName="BaseType" InstanceCount="[Base_InstanceCount]">
+        <SingletonPartition />
+      </StatelessService>
+    </Service>
+    <Service Name="Geteway">
+      <StatelessService ServiceTypeName="GetewayType" InstanceCount="[Geteway_InstanceCount]">
+        <SingletonPartition />
+      </StatelessService>
+    </Service>
+  </DefaultServices>
 </ApplicationManifest>

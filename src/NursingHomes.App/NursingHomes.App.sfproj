@@ -24,7 +24,7 @@
     <None Include="Scripts\Deploy-FabricApplication.ps1" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\microservices\IdentityHost.Service\src\IdentityHost.Service\IdentityHost.Service.csproj" />
+    <ProjectReference Include="..\NursingHomes.Base\NursingHomes.Base.xproj" />
     <ProjectReference Include="..\NursingHomes.Geteway\NursingHomes.Geteway.csproj" />
   </ItemGroup>
   <ItemGroup>
