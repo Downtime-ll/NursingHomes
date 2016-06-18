@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pagination\AsyncPagedList.cs" />
+    <Compile Include="Pagination\AsyncPagedListExtensions.cs" />
     <Compile Include="Pagination\BasePagedList.cs" />
     <Compile Include="Pagination\IPagedList.cs" />
     <Compile Include="Pagination\PagedList.cs" />
