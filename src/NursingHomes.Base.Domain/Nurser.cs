@@ -13,6 +13,8 @@ namespace NursingHomes.Base.Domain
     {
         public Guid Id { get; set; }
 
+        public string Name { get; set; }
+
         /// <summary>
         /// 护工No
         /// </summary>

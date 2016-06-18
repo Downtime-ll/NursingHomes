@@ -1,13 +1,19 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace NursingHomes.Core.Pagination
+namespace NursingHomes.Core.PagedList
 {
-    [Serializable]
+    /// <summary>
+    /// 	Represents a subset of a collection of objects that can be individually accessed by index and containing metadata about the superset collection of objects this subset was created from.
+    /// </summary>
+    /// <remarks>
+    /// 	Represents a subset of a collection of objects that can be individually accessed by index and containing metadata about the superset collection of objects this subset was created from.
+    /// </remarks>
+    /// <typeparam name = "T">The type of object the collection should contain.</typeparam>
+    /// <seealso cref = "IPagedList{T}" />
+    /// <seealso cref = "List{T}" />
+    //[Serializable]
     public abstract class BasePagedList<T> : PagedListMetaData, IPagedList<T>
     {
         /// <summary>
@@ -31,9 +37,9 @@ namespace NursingHomes.Core.Pagination
         protected internal BasePagedList(int pageNumber, int pageSize, int totalItemCount)
         {
             if (pageNumber < 1)
-                throw new ArgumentOutOfRangeException("pageNumber", pageNumber, "PageNumber cannot be below 1.");
+                throw new ArgumentOutOfRangeException(String.Format("pageNumber = {0}. PageNumber cannot be below 1.", pageNumber));
             if (pageSize < 1)
-                throw new ArgumentOutOfRangeException("pageSize", pageSize, "PageSize cannot be less than 1.");
+                throw new ArgumentOutOfRangeException(String.Format("pageSize = {0}. PageSize cannot be less than 1.", pageSize));
 
             // set source to blank list if superset is null to prevent exceptions
             TotalItemCount = totalItemCount;
@@ -49,8 +55,8 @@ namespace NursingHomes.Core.Pagination
             FirstItemOnPage = (PageNumber - 1) * PageSize + 1;
             var numberOfLastItemOnPage = FirstItemOnPage + PageSize - 1;
             LastItemOnPage = numberOfLastItemOnPage > TotalItemCount
-                                 ? TotalItemCount
-                                 : numberOfLastItemOnPage;
+                                ? TotalItemCount
+                                : numberOfLastItemOnPage;
         }
 
         #region IPagedList<T> Members
@@ -85,7 +91,7 @@ namespace NursingHomes.Core.Pagination
         /// <summary>
         /// 	Gets the number of elements contained on this page.
         /// </summary>
-        public int Count
+        public virtual int Count
         {
             get { return Subset.Count; }
         }

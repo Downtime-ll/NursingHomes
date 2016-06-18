@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 // associated with an assembly.
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("NursingHomes.Core")]
+[assembly: AssemblyProduct("NursingHomes.Base.Test")]
 [assembly: AssemblyTrademark("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
@@ -16,4 +16,4 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("9d6d9228-7945-45b4-aba1-57945074bad3")]
+[assembly: Guid("8501d638-87cf-4980-99c3-e75c623dc7c8")]

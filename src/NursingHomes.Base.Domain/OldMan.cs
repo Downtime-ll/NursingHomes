@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NursingHomes.Base.Domain
 {
-    public class OldPeople
+    public class OldMan
     {
         public Guid Id { get; set; }
 
@@ -23,7 +23,7 @@ namespace NursingHomes.Base.Domain
         /// <summary>
         /// 家属
         /// </summary>
-        public ICollection<Family> Families { get; set; }
+        public ICollection<Relation> Relations { get; set; }
 
 
     }
@@ -31,7 +31,7 @@ namespace NursingHomes.Base.Domain
     /// <summary>
     /// 家属
     /// </summary>
-    public class Family
+    public class Relation
     {
         public Guid Id { get; set; }
 
