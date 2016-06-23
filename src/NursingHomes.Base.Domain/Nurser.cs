@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Abp.Domain.Entities.Auditing;
 
 namespace NursingHomes.Base.Domain
 {
     /// <summary>
     /// 护工
     /// </summary>
-    public class Nurser
+    public class Nurser : AuditedEntity<Guid>
     {
-        public Guid Id { get; set; }
 
         public string Name { get; set; }
 

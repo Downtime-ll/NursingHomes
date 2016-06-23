@@ -2,19 +2,13 @@
   "version": "1.0.0-*",
 
   "dependencies": {
-    "NursingHomes.Core": "1.0.0-*"
+    "Abp": "0.9.6",
+    "Abp.AutoMapper": "0.9.6"
   },
 
   "frameworks": {
-    "net451": {
-    },
-    "netcoreapp1.0": {
-      "dependencies": {
-        "Microsoft.NETCore.App": {
-          "version": "1.0.0-*",
-          "type": "platform"
-        }
-      }
+    "net461": {
     }
+   
   }
 }

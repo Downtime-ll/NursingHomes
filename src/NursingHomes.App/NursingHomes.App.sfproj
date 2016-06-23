@@ -24,8 +24,8 @@
     <None Include="Scripts\Deploy-FabricApplication.ps1" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Nature.NursingHomes.Gateway\Nature.NursingHomes.Gateway.xproj" />
     <ProjectReference Include="..\NursingHomes.Base\NursingHomes.Base.xproj" />
-    <ProjectReference Include="..\NursingHomes.Geteway\NursingHomes.Geteway.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

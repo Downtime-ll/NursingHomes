@@ -5,13 +5,13 @@
   "dependencies": {
     "dotnet-test-xunit": "1.0.0-*",
     "Microsoft.Extensions.Logging.Testing": "1.1.0-*",
-    "NursingHomes.Base": "1.0.0-*",
     "Microsoft.EntityFrameworkCore.InMemory": "1.1.0-*",
-    "XUnit": "2.1.0"
+    "XUnit": "2.1.0",
+    "NursingHomes.Base.Domain": "1.0.0-*",
+    "NursingHomes.Base": "1.0.0-*"
   },
 
   "frameworks": {
-    
-    "net451": {}
+    "net461": {}
   }
 }

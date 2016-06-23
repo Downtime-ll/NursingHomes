@@ -1,0 +1,35 @@
+{
+  "dependencies": {
+    "Microsoft.AspNetCore.Server.Kestrel": "1.0.0-rc2-final",
+    "Microsoft.ServiceFabric": "5.1.150",
+    "Microsoft.ServiceFabric.Data": "2.1.150",
+    "Microsoft.ServiceFabric.Services": "2.1.150",
+    "Microsoft.ServiceFabric.AspNetCore.Gateway": "1.0.0-*",
+    "Microsoft.ServiceFabric.AspNetCore.Hosting": "1.0.0-*",
+    "Microsoft.Extensions.Configuration.EnvironmentVariables": "1.0.0-rc2-final",
+    "Microsoft.Extensions.Configuration.Json": "1.0.0-rc2-final"
+  },
+
+  "tools": {
+  },
+
+  "frameworks": {
+    "net452": { }
+  },
+
+  "buildOptions": {
+    "emitEntryPoint": true,
+    "preserveCompilationContext": true
+  },
+
+  "publishOptions": {
+    "include": [
+      "wwwroot",
+      "web.config",
+      "appsettings.json"
+    ]
+  },
+
+  "scripts": {
+  }
+}

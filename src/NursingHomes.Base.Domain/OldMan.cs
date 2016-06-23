@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Abp.Domain.Entities.Auditing;
 
 namespace NursingHomes.Base.Domain
 {
-    public class OldMan
+    public class OldMan : AuditedEntity<Guid>
     {
-        public Guid Id { get; set; }
 
         /// <summary>
         /// 房间号
@@ -31,14 +31,13 @@ namespace NursingHomes.Base.Domain
     /// <summary>
     /// 家属
     /// </summary>
-    public class Relation
+    public class Relation:AuditedEntity<Guid>
     {
-        public Guid Id { get; set; }
 
         /// <summary>
         /// 家属Id
         /// </summary>
-        public Guid UserId { get; set; }
+        public Guid OldManId { get; set; }
 
         /// <summary>
         /// 名字
