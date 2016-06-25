@@ -23,27 +23,46 @@
     "Microsoft.ServiceFabric.Services": "2.1.150",
     "NursingHomes.Base.Domain": "1.0.0-*",
     "Castle.Windsor-log4net": "3.3.0",
-      "Castle.LoggingFacility.MsLogging": "0.1.0",
+    "Castle.LoggingFacility.MsLogging": "0.1.0",
+    "Microsoft.EntityFrameworkCore.Tools": {
+      "version": "1.0.0-preview1-final",
+      "type": "build"
+    }
   },
 
   "tools": {
+     "Microsoft.EntityFrameworkCore.Tools": {
+      "version": "1.0.0-preview1-final",
+      "imports": [
+        "portable-net45+win8+dnxcore50",
+        "portable-net45+win8"
+      ]
+    }
   },
 
   "frameworks": {
-    "net461": { }
+    "net461": {
+      "Microsoft.NETCore.App": {
+        "version": "1.0.0-rc2-3002702",
+        "type": "platform"
+      }
+    }
   },
 
   "buildOptions": {
     "emitEntryPoint": true,
-    "preserveCompilationContext": true
+    "preserveCompilationContext": true,
+    "copyToOutput": {
+      "include": "Config" 
+    } 
+
   },
 
   "publishOptions": {
     "include": [
       "wwwroot",
       "Views",
-      "appsettings.json",
-      "web.config"
+      "Config"
     ]
   },
 

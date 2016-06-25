@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Abp.EntityFrameworkCore;
+﻿using Abp.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using NursingHomes.Base.Domain;
 
-namespace NursingHomes.Base.Store
+namespace NursingHomes.Base.DbContext
 {
     public class BaseContext : AbpDbContext
     {

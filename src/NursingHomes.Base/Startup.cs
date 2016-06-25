@@ -11,8 +11,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
-using NursingHomes.Base.Store;
 using Abp.AspNetCore;
+using NursingHomes.Base.DbContext;
 
 namespace NursingHomes.Base
 {
@@ -22,8 +22,8 @@ namespace NursingHomes.Base
         {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
-                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
+                .AddJsonFile("config\\appsettings.json", optional: true, reloadOnChange: true)
+                .AddJsonFile($"config\\appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
             Configuration = builder.Build();
         }
@@ -34,19 +34,15 @@ namespace NursingHomes.Base
         {
             services.AddServiceFabricService<WebAppService>();
 
-            services.AddDbContext<BaseContext>(
-                options => options.UseSqlServer(Configuration.GetConnectionString("Default"))
-            );
+            services.AddSingleton<IConfigurationRoot>(sp => Configuration);
             services.AddMvc(o => {
                 o.AddAbp();
             }).AddControllersAsServices();
 
-            //Configure Abp and Dependency Injection
             return services.AddAbp(abpBootstrapper =>
             {
-                //Configure Log4Net logging
                 abpBootstrapper.IocManager.IocContainer.AddFacility<LoggingFacility>(
-                    f => f.UseLog4Net().WithConfig("log4net.config")
+                    f => f.UseLog4Net().WithConfig("config/log4net.config")
                 );
             });
         }

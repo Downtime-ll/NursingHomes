@@ -2,7 +2,7 @@
 using Abp.AspNetCore;
 using Abp.AutoMapper;
 using Abp.Modules;
-using NursingHomes.Base.Store;
+using NursingHomes.Base.DbContext;
 
 namespace NursingHomes.Base
 {

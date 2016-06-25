@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Threading.Tasks;
+﻿using System.Reflection;
 using Abp.EntityFrameworkCore;
 using Abp.Modules;
 
-namespace NursingHomes.Base.Store
+namespace NursingHomes.Base.DbContext
 {
     [DependsOn(
         typeof(AbpEntityFrameworkCoreModule))]
