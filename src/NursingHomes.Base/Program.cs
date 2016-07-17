@@ -14,24 +14,25 @@ namespace NursingHomes.Base
     {
         public static void Main(string[] args)
         {
-            var communicationContext = CreateAspNetCoreCommunicationContext();
+             CreateAspNetCoreCommunicationContext();
 
-            ServiceRuntime.RegisterServiceAsync("NursingHomesBaseType", serviceContext => 
-                    new WebAppService(serviceContext, communicationContext))
-                .GetAwaiter().GetResult();
+            //ServiceRuntime.RegisterServiceAsync("NursingHomesBaseType", serviceContext => 
+            //        new WebAppService(serviceContext, communicationContext))
+            //    .GetAwaiter().GetResult();
 
-            communicationContext.WebHost.Run();
         }
 
-        private static AspNetCoreCommunicationContext CreateAspNetCoreCommunicationContext()
+        private static void CreateAspNetCoreCommunicationContext()
         {
             var webHost = new WebHostBuilder().UseKestrel()
+                                              .UseIISIntegration()
                                               .UseContentRoot(Directory.GetCurrentDirectory())
                                               .UseStartup<Startup>()
-                                              .UseServiceFabricEndpoint("NursingHomesBaseTypeEndpoint")
+                                              //.UseServiceFabricEndpoint("NursingHomesBaseTypeEndpoint")
                                               .Build();
+            webHost.Run();
 
-            return new AspNetCoreCommunicationContext(webHost);
+            //return new AspNetCoreCommunicationContext(webHost);
         }
     }
 }

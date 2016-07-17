@@ -14,6 +14,9 @@ using Microsoft.EntityFrameworkCore;
 using Abp.AspNetCore;
 using NursingHomes.Base.DbContext;
 
+using Microsoft.AspNetCore.Http;
+using NursingHomes.Base.Migrations;
+
 namespace NursingHomes.Base
 {
     public class Startup 
@@ -32,14 +35,17 @@ namespace NursingHomes.Base
 
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
-            services.AddServiceFabricService<WebAppService>();
+            //services.AddServiceFabricService<WebAppService>();
+            services.AddDbContext<BaseContext>(
+                options => options.UseSqlServer(Configuration.GetConnectionString("Default"))
+            );
 
             services.AddSingleton<IConfigurationRoot>(sp => Configuration);
             services.AddMvc(o => {
-                o.AddAbp();
+                o.AddAbp(services);
             }).AddControllersAsServices();
 
-            return services.AddAbp(abpBootstrapper =>
+            return services.AddAbp<AbpNursingHomesBaseModule>(abpBootstrapper =>
             {
                 abpBootstrapper.IocManager.IocContainer.AddFacility<LoggingFacility>(
                     f => f.UseLog4Net().WithConfig("config/log4net.config")
@@ -67,6 +73,8 @@ namespace NursingHomes.Base
             app.UseStaticFiles();
 
             app.UseMvc();
+
+            app.ApplicationServices.SendData();
         }
     }
 }

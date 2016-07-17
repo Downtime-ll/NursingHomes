@@ -16,7 +16,7 @@ namespace NursingHomes.Base.DbContext
             _configuration = builder.Build(); ;
         }
 
-        public BaseContext Create()
+        public BaseContext Create(DbContextFactoryOptions options)
         {
             var builder = new DbContextOptionsBuilder<BaseContext>();
             builder.UseSqlServer(_configuration.GetConnectionString("Default"));

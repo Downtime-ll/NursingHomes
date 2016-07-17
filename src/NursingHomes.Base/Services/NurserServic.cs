@@ -10,11 +10,11 @@ using NursingHomes.Base.Domain.Dtos;
 
 namespace NursingHomes.Base.Services
 {
-    public class NurserServic : ApplicationService, INurserService
+    public class NurserService : ApplicationService, INurserService
     {
         private readonly IRepository<Nurser,Guid> _nurseRepository;
 
-        public NurserServic(IRepository<Nurser,Guid> nurseRepository)
+        public NurserService(IRepository<Nurser,Guid> nurseRepository)
         {
             _nurseRepository = nurseRepository;
         }
